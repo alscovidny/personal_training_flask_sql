@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}{{name}}{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+  <h1>{{name}} full data</h1>
+  <p class="important">
+  <ul>
+    {% for j in range(num_col) %}
+    <li>{{ all_columns[j] }} = {{ all_values[j] }}</li>
+  {% endfor %}  
+{% endblock %}
