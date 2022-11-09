@@ -36,7 +36,6 @@ def create_db():
         conn.execute(f"USE {DATABASE};")
         TABLES = list(conn.execute('show tables;'))
         return f"successfully made database {DATABASE} with tables {tuple(map(lambda x: x[0], TABLES))}"
-
 @app.route('/initdb/dump')
 def dump_database():
     dump_db(engine)
